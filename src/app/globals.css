@@ -44,53 +44,53 @@
 }
 
 :root {
-  --background: 248 250 252;
-  --foreground: 15 23 42;
+  --background: rgb(229 229 229);
+  --foreground: rgb(37, 37, 37);
   --card: 255 255 255;
   --card-foreground: 15 23 42;
   --popover: 255 255 255;
   --popover-foreground: 15 23 42;
-  --primary: 99 102 241;
-  --primary-foreground: 248 250 252;
-  --secondary: 241 245 249;
-  --secondary-foreground: 15 23 42;
-  --muted: 241 245 249;
-  --muted-foreground: 100 116 139;
-  --accent: 241 245 249;
-  --accent-foreground: 15 23 42;
-  --destructive: 239 68 68;
-  --destructive-foreground: 248 250 252;
-  --border: 226 232 240;
-  --input: 226 232 240;
-  --ring: 99 102 241;
+  --primary: rgb(99 102 241);
+  --primary-foreground: rgb(248 250 252);
+  --secondary: rgb(245 245 245);
+  --secondary-foreground: rgb(15 23 42);
+  --muted: rgb(245 245 245);
+  --muted-foreground: rgb(245 245 245);
+  --accent: rgb(245 245 245);
+  --accent-foreground: rgb(245 245 245);
+  --destructive: rgb(239 68 68);
+  --destructive-foreground: rgb(248 250 252);
+  --border: rgb(226 232 240);
+  --input: rgb(229 229 229);
+  --ring: rgb(64, 0, 212);
   --radius: 0.5rem;
 }
 
 .dark {
-  --background: 0 0% 3.9%;
-  --foreground: 0 0% 98%;
-  --card: 0 0% 3.9%;
-  --card-foreground: 0 0% 98%;
-  --popover: 0 0% 3.9%;
-  --popover-foreground: 0 0% 98%;
-  --primary: 0 0% 98%;
-  --primary-foreground: 0 0% 9%;
-  --secondary: 0 0% 14.9%;
-  --secondary-foreground: 0 0% 98%;
-  --muted: 0 0% 14.9%;
-  --muted-foreground: 0 0% 63.9%;
-  --accent: 0 0% 14.9%;
-  --accent-foreground: 0 0% 98%;
-  --destructive: 0 62.8% 30.6%;
-  --destructive-foreground: 0 0% 98%;
-  --border: 0 0% 14.9%;
-  --input: 0 0% 14.9%;
-  --ring: 0 0% 83.1%;
-  --chart-1: 220 70% 50%;
-  --chart-2: 160 60% 45%;
-  --chart-3: 30 80% 55%;
-  --chart-4: 280 65% 60%;
-  --chart-5: 340 75% 55%;
+  --background: rgb(24, 24, 24);
+  --foreground: rgb(245 245 245);
+  --card: rgb(24, 24, 24);
+  --card-foreground: rgb(245 245 245);
+  --popover: rgb(24, 24, 24);
+  --popover-foreground: rgb(245 245 245);
+  --primary: rgb(245 245 245);
+  --primary-foreground: rgb(0 0% 9%);
+  --secondary: rgb(0 0% 14.9%);
+  --secondary-foreground: rgb(245 245 245);
+  --muted: rgb(0 0% 14.9%);
+  --muted-foreground: rgb(91, 91, 91);
+  --accent: rgb(41, 41, 41);
+  --accent-foreground: rgb(245 245 245);
+  --destructive: rgb(239 68 68);
+  --destructive-foreground: rgb(245 245 245);
+  --border: rgb(0 0% 14.9%);
+  --input: rgb(0 0% 14.9%);
+  --ring: rgb(132, 66, 225);
+  --chart-1: rgb(220 70% 50%);
+  --chart-2: rgb(160 60% 45%);
+  --chart-3: rgb(30 80% 55%);
+  --chart-4: rgb(280 65% 60%);
+  --chart-5: rgb(340 75% 55%);
 }
 
 
@@ -109,21 +109,23 @@ body {
 font-family: "SF Mono", "Monaco", "Inconsolata", "Roboto Mono", "Consolas", monospace;
 font-weight: 400;
 letter-spacing: -0.025em;
+/* font-size: 0rem; */
+line-height: -1rem;
 }
 
   /* Main content background */
   .main-content-bg {
-  background-color: rgb(248, 250, 252);
+  background-color: rgb(229 229 229);
   }
 
   .dark .main-content-bg {
-  background-color: #171717;
+  background-color: rgb(24, 24, 24);
   }
 
   /* Sidebar styling */
   .sidebar-bg {
-  background-color: rgb(255, 255, 255);
-  border-right: 1px solid rgb(226, 232, 240);
+  background-color: rgb(245, 245, 245);
+  border-right: 1px solid rgb(245, 245, 245);
   }
 
   .dark .sidebar-bg {
@@ -138,11 +140,11 @@ letter-spacing: -0.025em;
 
   /* Chat message styles */
   .user-message {
-    @apply bg-white dark:bg-neutral-800 border border-neutral-200 dark:border-neutral-700 rounded-2xl p-4 shadow-sm;
+    @apply bg-white dark:bg-neutral-800 border border-neutral-200 dark:border-neutral-700 rounded-2xl p-4 shadow-sm dark:text-neutral-100 text-neutral-800;
   }
 
   .assistant-message {
-    @apply mb-3 md:mb-4 last:mb-0 text-neutral-100;
+    @apply mb-3 md:mb-4 last:mb-0 dark:text-neutral-100 text-neutral-800 ;
   }
 
   .thought-message {
@@ -180,14 +182,14 @@ letter-spacing: -0.025em;
 
   /* Math rendering fixes */
   .katex-display {
-    max-width: 100%;
-    overflow-x: auto;
-    overflow-y: hidden;
+    max-width: 100% !important;
+    overflow-x: hidden !important;
+    overflow-y: hidden !important;
   }
 
   .katex {
-    max-width: 100%;
-    overflow-x: auto;
+    max-width: 100% !important;
+    overflow-x: hidden !important;
   }
 
   

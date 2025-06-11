@@ -122,7 +122,7 @@ export function MessageContent({ content, className, isRiikResponse = false, sou
       .replace(/\*(.*?)\*/g, "<em>$1</em>")
       .replace(
         /`([^`]+)`/g,
-        '<code class="bg-gray-100 dark:bg-gray-800 px-1.5 py-0.5 rounded text-sm font-mono break-all">$1</code>',
+        '<code class="bg-neutral-100 dark:bg-gray-800 px-1.5 py-0.5 rounded text-sm font-mono break-all">$1</code>',
       )
 
     // Convert line breaks to paragraphs
@@ -160,11 +160,11 @@ export function MessageContent({ content, className, isRiikResponse = false, sou
             
             return (
               <div key={index} className="code-block relative group">
-                <div className="flex items-center justify-between bg-gray-800 px-3 sm:px-4 py-2 rounded-t-lg">
-                  <span className="text-xs text-gray-400 font-medium truncate">{part.language}</span>
+                <div className="flex items-center justify-between bg-neutral-800 px-3 sm:px-4 py-2 rounded-t-lg">
+                  <span className="text-xs text-neutral-400 font-medium truncate">{part.language}</span>
                   <button
                     onClick={() => copyToClipboard(part.content, codeId)}
-                    className="flex items-center gap-1.5 text-xs text-gray-400 hover:text-white transition-colors px-2 py-1 rounded bg-gray-700 hover:bg-gray-600 flex-shrink-0"
+                    className="flex items-center gap-1.5 text-xs text-neutral-400 hover:text-white transition-colors px-2 py-1 rounded bg-neutral-700 hover:bg-neutral-600 flex-shrink-0"
                   >
                     {isCopied ? (
                       <>
@@ -201,8 +201,8 @@ export function MessageContent({ content, className, isRiikResponse = false, sou
             )
           } else if (part.type === 'block-math') {
             return (
-              <div key={index} className="my-4 text-center overflow-x-auto">
-                <div className="inline-block min-w-0">
+              <div key={index} className="my-4 text-center">
+                <div className="w-full overflow-hidden">
                   <BlockMath math={part.content} />
                 </div>
               </div>
@@ -235,7 +235,7 @@ export function MessageContent({ content, className, isRiikResponse = false, sou
         {sources.length > 0 && (
           <div className="mt-6 pt-4 border-t border-gray-200 dark:border-gray-700">
             <div className="flex items-center justify-between mb-3">
-              <h4 className="text-sm font-medium text-gray-700 dark:text-gray-300">
+              <h4 className="text-sm font-medium text-neutral-700 dark:text-neutral-300">
                 Sources ({sources.length})
               </h4>
               {sources.length > 3 && (
